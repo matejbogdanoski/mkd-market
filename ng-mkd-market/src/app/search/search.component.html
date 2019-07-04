@@ -1,0 +1,52 @@
+<mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
+<div class="container mt-5">
+  <form>
+<mat-form-field class="searchInput mr-5">
+    <input matInput [formControl]="searchInput" placeholder="Search product ..">
+</mat-form-field>
+
+<mat-form-field class="selectField mr-5">
+  <mat-label>City</mat-label>
+  <mat-select [(ngModel)]="selectedValue" name="food">
+    <mat-option *ngFor="let city of cities  " [value]="city">
+      {{city}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  <button mat-button class="btn btn-primary" (click)="onClick()">Search!</button>
+  </form>
+  <div  *ngIf="currPage > 0">
+    <span style="cursor: pointer;" (click)="prevPage()">
+      <i class="material-icons">skip_previous</i>
+    </span>
+    <span class="curr-page">{{currPage}}</span>
+    <span style="cursor: pointer;" (click)="nextPage()">
+    <i class="material-icons">skip_next</i>
+    </span>
+  </div>
+  <ul *ngIf="ads">
+  <li *ngFor="let ad of ads">
+    <div class="itemContainer" (click)="redirect(ad.originalUrl)">
+      <img *ngIf="ad.imageUrl" src="{{ad.imageUrl}}" width="200px" height="150px">
+      <img *ngIf="!ad.imageUrl" src="https://acacia-wood.com/themes/jtherczeg-multi//assets/images/acacia/empty-img.png" width="200px" height="150px">
+      <div class="text">
+        <div>{{ad.originSite}}</div>
+        <div class="namePrice"><span class="ad-name"><b>{{ad.name}}</b></span><br><br> <span>{{ad.price}}</span></div>
+      <div class="cityCategory">{{ad.cityCategory}}</div>
+      </div>
+    </div>
+  </li>
+  </ul>
+
+  <div *ngIf="currPage > 0" class="float-right bottom-pagination">
+    <span style="cursor: pointer;" (click)="prevPage()">
+      <i class="material-icons">skip_previous</i>
+    </span>
+    <span class="curr-page">{{currPage}}</span>
+    <span style="cursor: pointer;" (click)="nextPage()">
+    <i class="material-icons">skip_next</i>
+    </span>
+  </div>
+</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">

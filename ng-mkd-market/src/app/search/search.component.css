@@ -1,0 +1,64 @@
+.searchInput{
+  width: 50%;
+}
+
+li{
+  list-style: none;
+}
+
+.itemContainer{
+  display:flex;
+  width: 65%;
+  margin:1%;
+  padding:1%;
+  border-radius: 10px;
+}
+
+
+img{
+  border-radius: 10px;
+  margin-top: 1%;
+}
+
+.itemContainer:hover{
+  cursor:pointer;
+  background-color: #E8F0FE;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+  padding-left: 1%;
+  margin-top: 2%;
+}
+
+.cityCategory{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+.ad-name{
+  font-size: large;
+}
+
+.cityCategory{
+  margin-bottom: 1%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.curr-page{
+  font-size: x-large;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  bottom: 3px;
+}
+.bottom-pagination{
+  padding-right: 20%;
+}
+
