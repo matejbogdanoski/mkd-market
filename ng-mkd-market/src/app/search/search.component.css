@@ -5,7 +5,7 @@
 li{
   list-style: none;
 }
-
+/*i cannot position items*/
 .itemContainer{
   display:flex;
   width: 65%;
